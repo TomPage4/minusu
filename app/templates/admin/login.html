@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Admin | Login{% endblock %}
+
+{% block content %}
+    <section class="login-section">
+        <div class="login-container">
+            <h2 class="login-title">Admin Login</h2>
+            <form method="post" class="login-form" id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" autocomplete="off">
+                    <div class="error-message" id="username-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="off">
+                    <div class="error-message" id="password-error"></div>
+                </div>
+                <button type="submit" id="login-submit-button" class="login-button">Login</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

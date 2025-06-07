@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{% block title %}Minusu Studio | Creative Design & Development{% endblock %}</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Snipcart -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ecommerce/snipcart-override.css') }}">
+    <!-- SEO -->
+    <meta name="title" content="{{ page_title or 'Minusu Studio | Creative Design & Development' }}"/>
+    <meta name="description" content="{{ page_description or 'Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions.' }}"/>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ page_url or 'https://www.minusu.studio/' }}"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ page_url or 'https://www.minusu.studio/' }}">
+    <meta property="og:title" content="{{ og_title or page_title or 'Minusu Studio | Creative Design & Development' }}">
+    <meta property="og:description" content="{{ og_description or page_description or 'Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions.' }}">
+    <meta property="og:image" content="https://www.minusu.studio/static/images/hero.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="{{ page_url or 'https://www.minusu.studio/' }}">
+    <meta name="twitter:title" content="{{ twitter_title or page_title or 'Minusu Studio | Creative Design & Development' }}">
+    <meta name="twitter:description" content="{{ twitter_description or page_description or 'Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions.' }}">
+    <meta name="twitter:image" content="https://www.minusu.studio/static/images/hero.png"/>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-favicon.png') }}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}"/>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.minusu.studio/#organization",
+        "name": "Minusu Studio",
+        "url": "https://www.minusu.studio",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.minusu.studio/static/images/hero.png"
+        },
+        "description": "Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "areaServed": "GB",
+            "availableLanguage": ["English"]
+        },
+        "sameAs": [
+            "https://www.instagram.com/minusuu",
+            "https://www.linkedin.com/in/minusu",
+            "https://wa.me/447543030419"
+        ]
+    }
+    </script>
+
+    {% if structured_data %}
+        <script type="application/ld+json">
+            {{ structured_data | tojson | safe }}
+        </script>
+    {% endif %}
+
+</head>
+    <body>
+        <header class="header">
+            <div class="header-content">
+                <nav class="desktop-nav">
+                    <ul class="nav-links left">
+                        <li><a href="/#founder">About</a></li>
+                        <li><a href="/#services">Services</a></li>
+                    </ul>
+                </nav>
+                <a href="/#intro" class="header-logo">
+                    <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Logo" class="header-logo">
+                </a>
+                <nav class="desktop-nav">
+                    <ul class="nav-links right">
+                        <li><a href="/#community">Community</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="burger-menu" aria-label="Toggle menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </header>
+
+        <div class="mobile-menu">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="/#founder">About</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#community">Community</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="menu-overlay"></div>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="#" class="footer-logo-link">
+                    <img src="{{ url_for('static', filename='images/hero.png') }}" alt="Logo" class="footer-logo">
+                </a>
+                <div class="footer-divider"></div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/minusu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com/in/minusu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn">
+                    </a>
+                    <a href="https://wa.me/447543030419" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="{{ url_for('static', filename='images/whatsapp.png') }}" alt="WhatsApp">
+                    </a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-credit">
+                    <span>Website developed by:</span>
+                    <a href="https://www.page1studios.com" target="_blank" rel="noopener noreferrer" class="developer-link">
+                        <img src="{{ url_for('static', filename='images/page1studios_logo.svg') }}" alt="Page1 Studios" class="developer-logo">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Your main scripts.js (loads CookieConsent and handles Snipcart loading after consent) -->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>

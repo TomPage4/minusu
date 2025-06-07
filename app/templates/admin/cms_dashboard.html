@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Admin | Dashboard{% endblock %}
+
+{% block content %}
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <h1 class="dashboard-title">CMS Dashboard</h1>
+            <div class="dashboard-content">
+                <nav class="dashboard-nav">
+                    <ul class="dashboard-list">
+                        {% for page in pages %}
+                        <li class="dashboard-item">
+                            <a href="{{ url_for('cms.edit_page', page=page) if page != 'products' else url_for('cms.edit_products') }}" class="dashboard-link">
+                                <span class="dashboard-link-text">{{ page.capitalize() }}</span>
+                                <div class="dashboard-link-icon">
+                                    <svg viewbox="0 0 28 25">
+                                        <path fill="#fff" d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+{% endblock %}

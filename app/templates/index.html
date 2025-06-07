@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block title %}Minusu Studio | Creative Design & Development{% endblock %}
+
+{% set page_title = "Minusu Studio | Creative Design & Development" %}
+{% set page_description = "Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions." %}
+{% set page_url = url_for('main.home', _external=True) %}
+
+{% set structured_data = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": page_url ~ "#webpage",
+    "url": page_url,
+    "name": page_title,
+    "description": page_description,
+    "inLanguage": "en-GB",
+    "isPartOf": {
+        "@type": "WebSite",
+        "@id": page_url ~ "#website",
+        "url": page_url,
+        "name": "Minusu Studio",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Minusu Studio",
+            "url": "https://www.minusu.studio",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.minusu.studio/static/images/hero.png"
+            }
+        }
+    },
+    "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.minusu.studio/static/images/hero.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "Minusu Studio - Creative Design & Development"
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": page_url
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    <section id="intro" class="intro">
+        <img src="{{ url_for('static', filename='images/' + content.intro.logo) }}" alt="Logo" class="intro-logo fade-in-up">
+        <h1 class="intro-headline fade-in-up">{{ content.intro.headline }}</h1>
+        <p class="intro-description fade-in-up">{{ content.intro.description }}</p>
+    </section>
+
+    <section id="founder" class="founder">
+        <h2 class="founder-title fade-in-up">{{ content.founder.title }}</h2>
+        <div class="founder-card">
+            <div class="founder-portrait fade-in-left">
+                <img src="{{ url_for('static', filename='images/' + content.founder.portrait) }}" alt="{{ content.founder.name }}">
+            </div>
+            <div class="founder-content fade-in-right">
+                <div class="founder-role">{{ content.founder.role }}</div>
+                <blockquote class="founder-quote">{{ content.founder.quote }}</blockquote>
+                <p class="founder-bio">{{ content.founder.bio }}</p>
+                <div class="founder-name">— {{ content.founder.name }}</div>
+                <div class="founder-social">
+                    <a href="{{ content.founder.social.instagram }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="{{ url_for('static', filename='images/instagram.png') }}" alt="Instagram">
+                    </a>
+                    <a href="{{ content.founder.social.linkedin }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn">
+                    </a>
+                    <a href="{{ content.founder.social.whatsapp }}" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <img src="{{ url_for('static', filename='images/whatsapp.png') }}" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 class="services-title fade-in-up">{{ content.services.title }}</h2>
+        <div class="services-grid">
+            {% for card in content.services.cards %}
+            <article class="service-card">
+                <a href="{{ card.link }}" class="service-card__link">
+                    <div class="service-card__icon">
+                        <svg viewbox="0 0 1000 1000">
+                            <g fill="none" fill-rule="nonzero" stroke="#999" stroke-width="41">
+                                {% if loop.index == 1 %}
+                                <path d="M300 300L700 300L700 700L300 700z"/>
+                                <path d="M400 200L600 200L600 800L400 800z"/>
+                                <path d="M200 400L800 400L800 600L200 600z"/>
+                                {% elif loop.index == 2 %}
+                                <path d="M500 150L850 750H150z"/>
+                                <path d="M500 260L750 690H250z"/>
+                                <path d="M500 370L650 630H350z"/>
+                                {% elif loop.index == 3 %}
+                                <path d="M500,100 A400,400 0 1,1 500,900 A400,400 0 1,1 500,100"/>
+                                <path d="M500,200 A300,300 0 1,1 500,800 A300,300 0 1,1 500,200"/>
+                                <path d="M500,300 A200,200 0 1,1 500,700 A200,200 0 1,1 500,300"/>
+                                {% elif loop.index == 4 %}
+                                <path d="M200,200 L800,200 L800,800 L200,800 Z"/>
+                                <path d="M300,300 L700,300 L700,700 L300,700 Z"/>
+                                <path d="M400,400 L600,400 L600,600 L400,600 Z"/>
+                                {% else %}
+                                <path d="M500 100L900 500L500 900L100 500z"/>
+                                <path d="M500 200L800 500L500 800L200 500z"/>
+                                <path d="M500 300L700 500L500 700L300 500z"/>
+                                {% endif %}
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="service-card__media">
+                        <svg viewbox="0 0 1000 1000">
+                            <g fill="none" fill-rule="nonzero" stroke="#F5F5F5" stroke-width="41">
+                                {% if loop.index == 1 %}
+                                <path d="M300 300L700 300L700 700L300 700z"/>
+                                <path d="M400 200L600 200L600 800L400 800z"/>
+                                <path d="M200 400L800 400L800 600L200 600z"/>
+                                {% elif loop.index == 2 %}
+                                <path d="M500 150L850 750H150z"/>
+                                <path d="M500 260L750 690H250z"/>
+                                <path d="M500 370L650 630H350z"/>
+                                {% elif loop.index == 3 %}
+                                <path d="M500,100 A400,400 0 1,1 500,900 A400,400 0 1,1 500,100"/>
+                                <path d="M500,200 A300,300 0 1,1 500,800 A300,300 0 1,1 500,200"/>
+                                <path d="M500,300 A200,200 0 1,1 500,700 A200,200 0 1,1 500,300"/>
+                                {% elif loop.index == 4 %}
+                                <path d="M200,200 L800,200 L800,800 L200,800 Z"/>
+                                <path d="M300,300 L700,300 L700,700 L300,700 Z"/>
+                                <path d="M400,400 L600,400 L600,600 L400,600 Z"/>
+                                {% else %}
+                                <path d="M500 100L900 500L500 900L100 500z"/>
+                                <path d="M500 200L800 500L500 800L200 500z"/>
+                                <path d="M500 300L700 500L500 700L300 500z"/>
+                                {% endif %}
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="service-card__header">
+                        <h3 class="service-card__header-title">{{ card.title }}</h3>
+                        <p class="service-card__header-meta">{{ card.subtitle }}</p>
+                        <div class="service-card__header-action">
+                            <span class="service-card__header-text">Learn more</span>
+                            <div class="service-card__header-icon">
+                                <svg viewbox="0 0 28 25">
+                                    <path fill="#fff" d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="community" class="community">
+        <h2 class="community-title fade-in-up">{{ content.community.title }}</h2>
+        
+        <div class="community-carousel">
+            <div class="carousel-track top">
+                {% for quote in content.community.quotes %}
+                <div class="carousel-item">
+                    <h3 class="quote-name">{{ quote.name }}</h3>
+                    <p class="quote-text">"{{ quote.quote }}"</p>
+                </div>
+                {% endfor %}
+                <!-- Duplicate items for seamless loop -->
+                {% for quote in content.community.quotes %}
+                <div class="carousel-item">
+                    <h3 class="quote-name">{{ quote.name }}</h3>
+                    <p class="quote-text">"{{ quote.quote }}"</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="carousel-track bottom">
+                {% for quote in content.community.quotes|reverse %}
+                <div class="carousel-item">
+                    <h3 class="quote-name">{{ quote.name }}</h3>
+                    <p class="quote-text">"{{ quote.quote }}"</p>
+                </div>
+                {% endfor %}
+                <!-- Duplicate items for seamless loop -->
+                {% for quote in content.community.quotes|reverse %}
+                <div class="carousel-item">
+                    <h3 class="quote-name">{{ quote.name }}</h3>
+                    <p class="quote-text">"{{ quote.quote }}"</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="#contact" class="community-cta fade-in-up">Join the collective</a>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <div class="contact-info fade-in-left">
+                <h2 class="contact-title">{{ content.contact.title }}</h2>
+                <p class="contact-description">{{ content.contact.description }}</p>
+            </div>
+            <div class="contact-form-container fade-in-right">
+                <form id="contact-form" novalidate>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" autocomplete="off">
+                    <div class="error-message" id="name-error"></div>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="off">
+                    <div class="error-message" id="email-error"></div>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                    <div class="error-message" id="message-error"></div>
+
+                    <!-- Honeypot field (invisible to users) -->
+                    <input type="text" id="referral_code" name="referral_code" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <button id="contact-submit-button" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Admin | Products{% endblock %}
+
+{% block content %}
+<h1>Edit Products</h1>
+
+<!-- Main form for saving edits -->
+<form method="POST" enctype="multipart/form-data">
+    {% for product in products %}
+        <fieldset>
+            <legend>{{ product.name }} (ID: {{ product.id }})</legend>
+
+            <label>Name:</label>
+            <input type="text" name="{{ product.id }}.name" value="{{ product.name }}"><br>
+
+            <label>Price:</label>
+            <input type="text" name="{{ product.id }}.price" value="{{ product.price }}"><br>
+
+            <label>Description:</label>
+            <textarea name="{{ product.id }}.description">{{ product.description }}</textarea><br>
+
+            <label>Image:</label>
+            <input type="file" name="{{ product.id }}.image">
+            {% if product.image %}
+                <br>
+                <img src="{{ url_for('static', filename='images/' ~ product.image) }}"
+                     alt="Product image"
+                     style="max-width: 150px;"><br>
+            {% endif %}
+
+            <!-- Delete button -->
+            <div>
+                <button type="button" data-product-id="{{ product.id }}" class="delete-btn">Delete</button>
+            </div>
+        </fieldset>
+        <hr>
+    {% endfor %}
+
+    <button type="submit">Save Changes</button>
+</form>
+
+<!-- Hidden delete form -->
+<form id="delete-form" method="POST" style="display: none;"></form>
+
+<a href="{{ url_for('cms.add_product') }}">
+    <button type="button">Add Product</button>
+</a>
+{% endblock %}

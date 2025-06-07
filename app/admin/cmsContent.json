@@ -1,0 +1,81 @@
+{
+    "home": {
+        "intro": {
+            "logo": "hero.png",
+            "headline": "You think it, we create it",
+            "description": "Visual identity, creative strategy, and digital storytelling for brands that matter."
+        },
+        "founder": {
+            "title": "Meet the founder",
+            "role": "Founder & Creative Director",
+            "quote": "Design isn't just how it looks \u2014 it's how it makes people feel. Minusu was born from the desire to simplify noise into meaning.",
+            "bio": "From sketching logos in notebooks to building emotional brand systems, my journey's been rooted in clarity and curiosity. I created Minusu as a space for design that dares to feel.",
+            "name": "Javier",
+            "portrait": "portrait.jpg",
+            "social": {
+                "instagram": "https://www.instagram.com/minusuu",
+                "linkedin": "https://linkedin.com/in/minusu",
+                "whatsapp": "https://wa.me/447543030419"
+            }
+        },
+        "services": {
+            "title": "Services",
+            "cards": [
+                {
+                    "title": "Complete Online Presence",
+                    "subtitle": "Full digital ecosystem development",
+                    "link": "#"
+                },
+                {
+                    "title": "Social Media",
+                    "subtitle": "Content strategy & management",
+                    "link": "#"
+                },
+                {
+                    "title": "Product Design",
+                    "subtitle": "Digital & physical product design",
+                    "link": "#"
+                },
+                {
+                    "title": "Brand Identity",
+                    "subtitle": "Complete brand system with website",
+                    "link": "#"
+                },
+                {
+                    "title": "Logo Design",
+                    "subtitle": "Custom brand mark creation",
+                    "link": "#"
+                }
+            ]
+        },
+        "community": {
+            "title": "Our community",
+            "quotes": [
+                {
+                    "name": "James Wilson",
+                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                },
+                {
+                    "name": "James Wilson",
+                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                },
+                {
+                    "name": "James Wilson",
+                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                },
+                {
+                    "name": "James Wilson",
+                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                },
+                {
+                    "name": "James Wilson",
+                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                }
+            ]
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Ready to start your project? Get in touch and let's create something extraordinary together."
+        }
+    }
+}

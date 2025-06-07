@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Admin | Edit data{% endblock %}
+
+{% block content %}
+    <section class="cms-section" id="cms-section">
+        <div class="cms-container">
+            <form method="POST" enctype="multipart/form-data" class="cms-form" id="cms-form">
+                {% macro render_field(section_name, field_name, value, full_path='', index=None) %}
+                    {% set current_path = full_path + '.' + field_name if full_path else section_name + '.' + field_name %}
+                    {% if index is not none %}
+                        {% set current_path = current_path ~ '[' ~ index ~ ']' %}
+                    {% endif %}
+                    
+                    {% if value is mapping %}
+                        <div class="cms-group" data-group-path="{{ current_path }}">
+                            <h3 class="cms-group-title">
+                                {% if index is not none %}
+                                    {{ field_name|capitalize }}
+                                {% else %}
+                                    {{ field_name|capitalize }}
+                                {% endif %}
+                            </h3>
+                            {% for subfield, subvalue in value.items() %}
+                                {{ render_field(section_name, subfield, subvalue, current_path) }}
+                            {% endfor %}
+                        </div>
+                    {% elif value is sequence and value is not string %}
+                        <div class="cms-array-group" data-array-path="{{ current_path }}">
+                            <div class="cms-array-header">
+                                <h3 class="cms-group-title">{{ field_name|capitalize }}</h3>
+                                {% if field_name == 'quotes' %}
+                                    <button type="button" class="cms-add-item-button" data-array-path="{{ current_path }}">Add Quote</button>
+                                {% endif %}
+                            </div>
+                            <div class="cms-array-items">
+                                {% for item in value %}
+                                    <div class="cms-group" data-index="{{ loop.index0 }}">
+                                        {% if field_name == 'quotes' %}
+                                            <button type="button" class="cms-delete-item-button" data-array-path="{{ current_path }}" data-index="{{ loop.index0 }}">Delete</button>
+                                        {% endif %}
+                                        {% if item is mapping %}
+                                            {% for subfield, subvalue in item.items() %}
+                                                {{ render_field(section_name, subfield, subvalue, current_path, loop.index0) }}
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="cms-field" data-field-path="{{ current_path }}[{{ loop.index0 }}]">
+                                                <label class="cms-label">Value</label>
+                                                <input type="text" 
+                                                       name="{{ current_path }}[{{ loop.index0 }}]" 
+                                                       value="{{ item }}" 
+                                                       class="cms-text-input">
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="cms-field" data-field-path="{{ current_path }}">
+                            <label class="cms-label">
+                                {% if index is not none %}
+                                    {{ field_name|capitalize }}
+                                {% else %}
+                                    {{ field_name|capitalize }}
+                                {% endif %}
+                            </label>
+                            
+                            {% if value is string and (value.endswith('.jpg') or value.endswith('.png') or value.endswith('.webp')) %}
+                                <div class="cms-image-field">
+                                    {% if value %}
+                                        <div class="cms-image-preview">
+                                            <img src="{{ url_for('static', filename='images/' + value) }}" alt="{{ field_name }}">
+                                        </div>
+                                    {% endif %}
+                                    <div class="cms-image-upload">
+                                        <input type="file" 
+                                               name="{{ current_path }}" 
+                                               id="{{ current_path|replace('.', '_')|replace('[', '_')|replace(']', '_') }}"
+                                               accept=".jpg,.jpeg,.png,.webp"
+                                               class="cms-file-input"
+                                               data-image-path="{{ current_path }}">
+                                        <label for="{{ current_path|replace('.', '_')|replace('[', '_')|replace(']', '_') }}" class="cms-file-label">
+                                            Choose new image
+                                        </label>
+                                        <input type="hidden" name="{{ current_path }}" value="{{ value }}" class="cms-image-value">
+                                    </div>
+                                </div>
+                            {% else %}
+                                <input type="text" 
+                                       name="{{ current_path }}" 
+                                       value="{{ value }}" 
+                                       class="cms-text-input">
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endmacro %}
+
+                {% for section, fields in content.items() %}
+                    <div class="cms-section-group" data-section="{{ section }}">
+                        <h2 class="cms-section-title">{{ section|capitalize }}</h2>
+                        {% for field, value in fields.items() %}
+                            {{ render_field(section, field, value) }}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
+                <div class="cms-actions">
+                    <button type="submit" class="cms-submit-button" id="cms-submit-button">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Example title | Contact{% endblock %}
+
+{% set page_title = "Example title | Contact" %}
+{% set page_description = "Contact description." %}
+{% set page_url = url_for('contact.show_contact_form', _external=True) %}
+
+{% set structured_data = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "@id": page_url ~ "#contactpage",
+    "url": page_url,
+    "name": page_title,
+    "description": page_description,
+    "inLanguage": "en-GB",
+    "isPartOf": {
+        "@type": "WebSite",
+        "@id": url_for('main.home', _external=True) ~ "#website",
+        "url": url_for('main.home', _external=True),
+        "name": "Example Company",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Example Company",
+            "url": "https://www.example.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.example.com/static/images/logo.png"
+            }
+        }
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": url_for('main.home', _external=True)
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": page_url
+            }
+        ]
+    }
+} %}
+
+{% block content %}
+    <h1>Contact</h1>
+    <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="off">
+        <div class="error-message" id="name-error"></div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="off">
+        <div class="error-message" id="email-error"></div>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+        <div class="error-message" id="message-error"></div>
+
+        <!-- Honeypot field (invisible to users) -->
+        <input type="text" id="referral_code" name="referral_code" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button id="contact-submit-button" type="submit">Send</button>
+    </form>
+
+{% endblock %}
