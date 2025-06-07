@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block title %}Example title | Terms of service{% endblock %}
+{% block title %}Minusu Studio | Terms of Service{% endblock %}
 
-{% set page_title = "Example title | Terms of service" %}
-{% set page_description = "Terms of service description." %}
+{% set page_title = "Minusu Studio | Terms of Service" %}
+{% set page_description = "Terms of service for Minusu Studio, outlining the rules and guidelines for using our website and services." %}
 {% set page_url = url_for('main.terms_of_service', _external=True) %}
 
 {% set structured_data = {
@@ -18,14 +18,14 @@
         "@type": "WebSite",
         "@id": url_for('main.home', _external=True) ~ "#website",
         "url": url_for('main.home', _external=True),
-        "name": "Example Company",
+        "name": "Minusu Studio",
         "publisher": {
             "@type": "Organization",
-            "name": "Example Company",
-            "url": "https://www.example.com",
+            "name": "Minusu Studio",
+            "url": "https://www.minusu.studio",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.example.com/static/images/logo.png"
+                "url": "https://www.minusu.studio/static/images/hero.png"
             }
         }
     },
@@ -41,7 +41,7 @@
             {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Terms of service",
+                "name": "Terms of Service",
                 "item": page_url
             }
         ]
@@ -53,73 +53,37 @@
     <!-- Just contact form/booking system -->
     <section id="terms-of-service">
         <h1>Terms of Service</h1>
-        <p>Last updated: [Insert Date]</p>
+        <p>Last updated: June 2025</p>
 
         <h2>1. Acceptance of Terms</h2>
-        <p>By using this website operated by [Your Company Name], you agree to be bound by these Terms of Service. If you do not agree, do not use the Site.</p>
+        <p>By using this website operated by Minusu Studio, you agree to be bound by these Terms of Service. If you do not agree, do not use the Site.</p>
 
         <h2>2. Services</h2>
-        <p>This Site provides features including a contact form and a booking system, intended to facilitate communication and appointment scheduling. Submission of a booking request does not guarantee availability or confirmation.</p>
+        <p>This Site provides features including a contact form, intended to facilitate communication between you and Minusu Studio. The contact form uses Flask-Mail for secure email delivery. Submission of a contact form does not guarantee an immediate response.</p>
 
         <h2>3. User Conduct</h2>
-        <p>You agree to use the Site only for lawful purposes. You must not misuse any part of the website or attempt unauthorized access to its systems.</p>
+        <p>You agree to use the Site only for lawful purposes. You must not misuse any part of the website or attempt unauthorized access to its systems. You agree not to use the contact form for any illegal or unauthorized purpose, including but not limited to sending spam or malicious content.</p>
 
         <h2>4. Data Collection</h2>
-        <p>We may collect information submitted through contact and booking forms, such as names, email addresses, and requested dates or times. This data is used solely for managing inquiries and bookings. We do not send marketing communications unless you have explicitly opted in. For more details, please refer to our Privacy Policy.</p>
+        <p>We may collect information submitted through our contact form, such as names and email addresses. This data is used solely for managing inquiries and providing our services. The contact form uses Flask-Mail for secure email delivery, and your data is processed in accordance with UK data protection laws. We do not send marketing communications unless you have explicitly opted in. For more details, please refer to our Privacy Policy.</p>
 
         <h2>5. Third-Party Services</h2>
-        <p>We may use trusted third-party services to manage bookings and communications (e.g., email delivery). These services may process your data in accordance with their own privacy policies.</p>
+        <p>We may use trusted third-party services to manage communications. These services may process your data in accordance with their own privacy policies. Our contact form uses Flask-Mail, which may involve data transfer to our email service provider. All such transfers are conducted in compliance with UK data protection laws.</p>
 
         <h2>6. Changes to Services</h2>
-        <p>We reserve the right to modify or discontinue any feature of the Site without notice or liability.</p>
+        <p>We reserve the right to modify or discontinue any feature of the Site without notice or liability. This includes changes to our contact form system or email delivery methods.</p>
 
         <h2>7. Limitation of Liability</h2>
-        <p>We are not liable for any damages arising from your use of or inability to use the Site or the services provided.</p>
+        <p>We are not liable for any damages arising from your use of or inability to use the Site or the services provided. This includes, but is not limited to, any issues arising from email delivery delays or failures through Flask-Mail or other communication systems.</p>
 
         <h2>8. Governing Law</h2>
-        <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales. You agree that the courts of England and Wales shall have exclusive jurisdiction over any disputes relating to these Terms.</p>
+        <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales. You agree that the courts of England and Wales shall have exclusive jurisdiction over any disputes relating to these Terms. Any disputes will be resolved in accordance with UK law and regulations.</p>
 
         <h2>9. Contact</h2>
-        <p>If you have any questions about these Terms, please contact us at: <a href="mailto:email@example.com">[email@example.com]</a>.</p>
-    </section>
+        <p>If you have any questions about these Terms, please contact us at: <a href="mailto:hello@minusu.studio">hello@minusu.studio</a>.</p>
 
-    <!-- Includes ecommerce -->
-    <section id="terms-of-service">
-        <h1>Terms of Service</h1>
-        <p>Last updated: [Insert Date]</p>
-
-        <h2>1. Acceptance of Terms</h2>
-        <p>By using this website operated by [Your Company Name], you agree to be bound by these Terms of Service. If you do not agree, please do not use the Site.</p>
-
-        <h2>2. Services Offered</h2>
-        <p>The Site provides a contact form, a booking system, and an online store powered by Snipcart. These features are designed to facilitate communication, appointment scheduling, and product or service purchases. Submission of a booking request does not guarantee availability or confirmation.</p>
-
-        <h2>3. Ecommerce</h2>
-        <p>Online purchases are processed using Snipcart. By purchasing through the Site, you also agree to Snipcart's <a href="https://snipcart.com/terms-of-service" target="_blank">Terms of Service</a> and <a href="https://support.snipcart.com/privacy" target="_blank">Privacy Policy</a>. We are not responsible for issues related to third-party payment processing or Snipcart services.</p>
-
-        <h2>4. Pricing & Payments</h2>
-        <p>All prices are listed in GBP and include VAT where applicable. Payments are securely processed via Snipcart's payment system.</p>
-
-        <h2>5. Refunds & Cancellations</h2>
-        <p>Policies regarding refunds, returns, and cancellations are specified on relevant product or service pages. If further assistance is required, please contact us directly.</p>
-
-        <h2>6. User Conduct</h2>
-        <p>You agree not to use the Site for unlawful, abusive, or fraudulent purposes. Any misuse may result in access restrictions or legal action.</p>
-
-        <h2>7. Data Collection</h2>
-        <p>We collect information submitted via contact, booking, and order forms, such as names, email addresses, and order details. This information is used for managing communications, appointments, and purchases. We do not send marketing emails without your explicit consent. See our Privacy Policy for full details.</p>
-
-        <h2>8. Third-Party Services</h2>
-        <p>We may use third-party tools and platforms (e.g., Snipcart, email services) to operate certain parts of the Site. These services may handle personal data under their respective policies.</p>
-
-        <h2>9. Limitation of Liability</h2>
-        <p>We are not responsible for any losses or damages resulting from the use of this Site, including issues related to transactions, service interruptions, or third-party platforms.</p>
-
-        <h2>10. Governing Law</h2>
-        <p>These Terms shall be governed by and construed in accordance with the laws of England and Wales. You agree that the courts of England and Wales shall have exclusive jurisdiction over any disputes relating to these Terms.</p>
-
-        <h2>11. Contact</h2>
-        <p>If you have any questions about these Terms, please contact us at: <a href="mailto:email@example.com">[email@example.com]</a>.</p>
+        <h2>10. Compliance with UK Regulations</h2>
+        <p>As a UK-based business, we comply with all applicable UK laws and regulations, including but not limited to the UK Data Protection Act 2018 and UK GDPR. Our use of Flask-Mail and other services is conducted in accordance with these regulations.</p>
     </section>
 
 {% endblock %}

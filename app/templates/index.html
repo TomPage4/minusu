@@ -87,7 +87,7 @@
         <div class="services-grid">
             {% for card in content.services.cards %}
             <article class="service-card">
-                <a href="{{ card.link }}" class="service-card__link">
+                <a href="{{ url_for('main.service', service_name=card.title.lower().replace(' ', '-')) }}" class="service-card__link">
                     <div class="service-card__icon">
                         <svg viewbox="0 0 1000 1000">
                             <g fill="none" fill-rule="nonzero" stroke="#999" stroke-width="41">

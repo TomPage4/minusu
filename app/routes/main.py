@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, send_from_directory, redirect, url_for
+from flask import Blueprint, render_template, send_from_directory, redirect, url_for, abort
 from app.admin.helpers import load_content
 
 main_bp = Blueprint('main', __name__)
@@ -32,3 +32,16 @@ def sitemap():
 @main_bp.route('/robots.txt')
 def robots():
     return send_from_directory('static', 'robots.txt', mimetype='text/plain')
+
+@main_bp.route('/<service_name>')
+def service(service_name):
+    content = load_content()
+    services = content['home']['services']['cards']
+    
+    # Find the matching service
+    service = next((s for s in services if s['title'].lower().replace(' ', '-') == service_name), None)
+    
+    if not service:
+        abort(404)
+        
+    return render_template('service.html', service=service)

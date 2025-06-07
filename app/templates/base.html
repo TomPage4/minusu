@@ -11,9 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <!-- My CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <!-- Snipcart -->
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/ecommerce/snipcart-override.css') }}">
     <!-- SEO -->
     <meta name="title" content="{{ page_title or 'Minusu Studio | Creative Design & Development' }}"/>
     <meta name="description" content="{{ page_description or 'Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions.' }}"/>
@@ -136,6 +133,12 @@
                     <a href="https://wa.me/447543030419" target="_blank" rel="noopener noreferrer" class="social-link">
                         <img src="{{ url_for('static', filename='images/whatsapp.png') }}" alt="WhatsApp">
                     </a>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="footer-legal">
+                    <a href="{{ url_for('main.privacy_policy') }}" class="footer-legal-link">Privacy Policy</a>
+                    <span class="footer-legal-separator">•</span>
+                    <a href="{{ url_for('main.terms_of_service') }}" class="footer-legal-link">Terms of Service</a>
                 </div>
                 <div class="footer-divider"></div>
                 <div class="footer-credit">
