@@ -32,13 +32,20 @@
     <meta name="twitter:url" content="{{ page_url or 'https://www.minusu.studio/' }}">
     <meta name="twitter:title" content="{{ twitter_title or page_title or 'Minusu Studio | Creative Design & Development' }}">
     <meta name="twitter:description" content="{{ twitter_description or page_description or 'Minusu Studio is a creative design and development studio specializing in modern, user-centered digital solutions.' }}">
-    <meta name="twitter:image" content="https://www.minusu.studio/static/images/hero.png"/>
+    <meta name="twitter:image" content="https://www.minusu.studio/static/images/small_logo.png"/>
 
     <!-- Favicons -->
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-favicon.png') }}"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}"/>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}"/>
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/favicon.png') }}"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Minusu Studio"/>
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="{{ url_for('static', filename='images/favicon.png') }}" color="#000000"/>
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="{{ url_for('static', filename='images/favicon.png') }}"/>
+    <meta name="msapplication-TileColor" content="#000000"/>
+    <meta name="theme-color" content="#000000"/>
 
     <!-- Schema.org -->
     <script type="application/ld+json">
