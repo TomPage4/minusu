@@ -1325,6 +1325,7 @@ body {
     border-radius: 8px;
     color: var(--primary-color);
     font-size: 1.2rem;
+    font-family: var(--font-family);
     transition: all 0.3s ease;
 }
 
@@ -1468,6 +1469,7 @@ body {
     #contact-form textarea {
         padding: 1rem;
         font-size: 1.1rem;
+        font-family: var(--font-family);
     }
 }
 
@@ -1500,6 +1502,7 @@ body {
     #contact-form textarea {
         padding: 0.8rem;
         font-size: 1rem;
+        font-family: var(--font-family);
     }
 
     #contact-submit-button {
