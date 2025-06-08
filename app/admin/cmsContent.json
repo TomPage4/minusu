@@ -22,29 +22,29 @@
             "title": "Services",
             "cards": [
                 {
-                    "title": "Complete Online Presence",
-                    "subtitle": "Full digital ecosystem development",
-                    "description": "Transform your digital footprint with a comprehensive online presence. We create cohesive, user-centered digital experiences that span across all platforms, from your website to social media channels. Our approach ensures consistent branding, seamless user journeys, and measurable results that drive engagement and growth."
+                "title": "Complete Online Presence",
+                "subtitle": "Unified digital brand experience",
+                "description": "We craft cohesive, cross-platform brand experiences from visuals to website, working closely with our trusted partners at Page 1 Studios for expert website development. Together, we ensure your brand is seamless, strategic, and built to grow."
                 },
                 {
-                    "title": "Social Media",
-                    "subtitle": "Content strategy & management",
-                    "description": "Elevate your social media presence with strategic content that resonates. We develop and execute tailored social media strategies that build meaningful connections with your audience. From content creation to community management, we help you tell your story in a way that engages and inspires."
+                "title": "Social Media",
+                "subtitle": "Strategy-driven storytelling",
+                "description": "We design impactful content strategies tailored to your brand voice. From content creation to community management, we help you build an authentic presence that sparks engagement and strengthens connection."
                 },
                 {
-                    "title": "Product Design",
-                    "subtitle": "Digital & physical product design",
-                    "description": "Create products that users love with our human-centered design approach. Whether digital or physical, we combine aesthetic excellence with functional innovation to deliver products that solve real problems. Our process ensures every detail is crafted with purpose and precision."
+                "title": "Product Design",
+                "subtitle": "Purposeful, human-first design",
+                "description": "We design intuitive digital and physical products that solve real-world problems. Every detail is crafted with care—balancing functionality, emotion, and aesthetic clarity."
                 },
                 {
-                    "title": "Brand Identity",
-                    "subtitle": "Complete brand system with website",
-                    "description": "Build a powerful brand identity that stands out in today's crowded marketplace. We develop comprehensive brand systems that capture your essence and communicate your values. From visual identity to brand guidelines, we create cohesive brand experiences that resonate with your audience and drive recognition."
+                "title": "Brand Identity",
+                "subtitle": "Distinctive, emotion-led branding",
+                "description": "We develop complete brand systems—from logos to tone of voice—that tell your story with intention. Our process brings consistency and soul to every brand touchpoint."
                 },
                 {
-                    "title": "Logo Design",
-                    "subtitle": "Custom brand mark creation",
-                    "description": "Create a distinctive logo that becomes the cornerstone of your brand identity. Our logo design process combines strategic thinking with creative excellence to deliver a mark that's both memorable and meaningful. We craft logos that work across all platforms and scales, ensuring your brand makes a lasting impression."
+                "title": "Logo Design",
+                "subtitle": "Strategic mark-making",
+                "description": "We create timeless, meaningful logos that anchor your identity. Every mark is designed to be versatile, memorable, and aligned with your brand's purpose."
                 }
             ]
         },
@@ -52,24 +52,28 @@
             "title": "Our community",
             "quotes": [
                 {
-                    "name": "James Wilson",
-                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                    "name": "Amira Shah",
+                    "quote": "Minusu didn't just elevate our visuals—they helped us communicate who we really are."
                 },
                 {
-                    "name": "James Wilson",
-                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                    "name": "Luca Moretti",
+                    "quote": "The brand system they created gave us clarity and confidence. It's more than design, it's identity."
                 },
                 {
-                    "name": "James Wilson",
-                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                    "name": "Sophie Grant",
+                    "quote": "Every detail felt intentional. Working with Javier was seamless and inspiring from start to finish."
                 },
                 {
-                    "name": "James Wilson",
-                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                    "name": "Daniel Osei",
+                    "quote": "Our audience engagement doubled after launch. Minusu's work made a real, measurable difference."
                 },
                 {
-                    "name": "James Wilson",
-                    "quote": "The results speak for themselves - our engagement has increased dramatically."
+                    "name": "Talia Rhodes",
+                    "quote": "Creative, strategic, and beautifully executed. I finally feel proud to share our brand with the world."
+                },
+                {
+                    "name": "Jonas Becker",
+                    "quote": "Minusu captured the heart of our brand in a way we never could on our own—it's design that *feels*."
                 }
             ]
         },
