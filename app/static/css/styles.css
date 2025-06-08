@@ -543,7 +543,7 @@ body {
 @media (max-width: 768px) {
     .founder-title {
         font-size: 2.5rem;
-        top: 12rem;
+        top: 10rem;
         margin-bottom: 2rem;
     }
 
@@ -601,7 +601,7 @@ body {
 @media (max-width: 480px) {
     .founder-title {
         font-size: 2rem;
-        top: 11rem;
+        top: 9rem;
     }
 
     .founder-card {
@@ -887,6 +887,15 @@ body {
 
     .service-card__header-action {
         bottom: 0.4em;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .service-card__header-icon {
+        width: 1.2em;
+        height: 1.2em;
+        display: inline-flex;
+        align-items: center;
     }
 }
 
@@ -919,10 +928,19 @@ body {
 
     .service-card__header-action {
         bottom: 0.3em;
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .service-card__header-text {
         font-size: 0.8rem;
+    }
+
+    .service-card__header-icon {
+        width: 1.2em;
+        height: 1.2em;
+        display: inline-flex;
+        align-items: center;
     }
 }
 
@@ -945,6 +963,13 @@ body {
 
     .service-card__header-text {
         color: #fff;
+    }
+
+    .service-card__header-icon {
+        width: 1.2em;
+        height: 1.2em;
+        display: inline-flex;
+        align-items: center;
     }
 
     .service-card:hover {
@@ -1022,6 +1047,36 @@ body {
 
 .carousel-track.bottom {
     animation: slideRight 30s linear infinite;
+}
+
+@media (max-width: 1200px) {
+    .carousel-track.top {
+        animation: slideLeft 25s linear infinite;
+    }
+
+    .carousel-track.bottom {
+        animation: slideRight 25s linear infinite;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-track.top {
+        animation: slideLeft 20s linear infinite;
+    }
+
+    .carousel-track.bottom {
+        animation: slideRight 20s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-track.top {
+        animation: slideLeft 15s linear infinite;
+    }
+
+    .carousel-track.bottom {
+        animation: slideRight 15s linear infinite;
+    }
 }
 
 .carousel-track:hover {
@@ -1475,7 +1530,7 @@ body {
 
 @media (max-width: 480px) {
     .contact {
-        padding: 3rem 1rem;
+        padding: 3rem 2rem;
     }
 
     .contact-title {
@@ -1606,6 +1661,7 @@ body {
 .developer-logo {
     height: 40px;
     width: auto;
+    padding-top: 0.8rem;
 }
 
 @media (max-width: 768px) {
