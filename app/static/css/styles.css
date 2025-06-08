@@ -291,6 +291,15 @@ body {
     line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+    .intro-headline {
+        font-size: 1.6rem;
+    }
+    .intro-description {
+        font-size: 1rem;
+    }
+}
+
 /* Founder section styles */
 .founder {
     min-height: 100vh;
