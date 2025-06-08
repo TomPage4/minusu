@@ -957,10 +957,8 @@ body {
     }
 
     .service-card__header-action {
-        opacity: 1 !important;
-        transform: translateX(0) !important;
-        display: flex !important;
-        visibility: visible !important;
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .service-card__header-text {
@@ -970,31 +968,13 @@ body {
     .service-card__header-icon {
         width: 1.2em;
         height: 1.2em;
-        display: inline-flex !important;
+        display: inline-flex;
         align-items: center;
-        visibility: visible !important;
-        opacity: 1 !important;
     }
 
     .service-card:hover {
         transform: none;
         box-shadow: none;
-    }
-
-    /* iOS specific styles */
-    @supports (-webkit-touch-callout: none) {
-        .service-card__header-action {
-            opacity: 1 !important;
-            transform: translateX(0) !important;
-            display: flex !important;
-            visibility: visible !important;
-        }
-
-        .service-card__header-icon {
-            display: inline-flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
     }
 
     /* Adjust SVG sizes for touch devices */
