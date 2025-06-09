@@ -335,7 +335,7 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     padding: 4rem;
     gap: 4rem;
-    margin-top: 12rem;
+    margin-top: 16rem;
 }
 
 .founder-portrait {
@@ -484,7 +484,6 @@ body {
         max-width: 900px;
         padding: 2.5rem;
         gap: 2.5rem;
-        margin-top: 12rem;
     }
 
     .founder-quote {
