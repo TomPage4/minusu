@@ -335,7 +335,7 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     padding: 4rem;
     gap: 4rem;
-    margin-top: 16rem;
+    margin-top: 10rem;
 }
 
 .founder-portrait {
@@ -467,6 +467,7 @@ body {
         max-width: 1200px;
         padding: 3.5rem;
         gap: 3.5rem;
+        margin-top: 16rem;
     }
 
     .founder-quote {
@@ -492,6 +493,12 @@ body {
 
     .founder-bio {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-height: 1000px) {
+    .founder-card {
+        margin-top: 16rem;
     }
 }
 
