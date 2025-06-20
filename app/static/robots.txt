@@ -10,4 +10,4 @@ Allow: /sitemap.xml
 Allow: /robots.txt
 
 # Sitemap location
-Sitemap: https://www.minusu.com/sitemap.xml
+Sitemap: https://www.minusu.studio/sitemap.xml
