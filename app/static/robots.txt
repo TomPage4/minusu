@@ -1,4 +1,13 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: http://127.0.0.1:5000/sitemap.xml # Example: CHANGE
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /admin/*
+
+# Allow important pages
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Sitemap location
+Sitemap: https://minusu.com/sitemap.xml
